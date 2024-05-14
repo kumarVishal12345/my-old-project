@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script><script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <style>
+                    .card_name{
+                    display:none;
+                    }
+                    .phone_number{
+                    display:none;
+                    }
+                      .template--face-mapping-skin-analysis .page-content.rte {
+                        max-width: 100%;
+                        padding: 0 0;
+                    }
+                      .fmc-desktop-screen1-background {
+      
+                        background-position: 0px center !important;
+                    }
+                      .rewardsTop {
+                        margin: auto auto 60px;
+                        background-color: #f7f9fb;
+                        background-image: url(https://cdn.shopify.com/s/files/1/0432/6100/1886/files/derm-rewards-lp-topbg.png?v=1596683465);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 100%;
+                    }
+                      .sectionContainer, .cs .sectionContainer {
+                        margin: 0 auto;
+                        width: 100%;
+                    }
+                      .topCopy {
+                        width: 100%;
+                        text-align: center;
+                        padding: 150px 35px 200px;
+                        margin: auto auto;
+                    }
+                      .topCopy h1 {
+                        margin: 10px 0 20px;
+                        text-transform: inherit;
+                    }
+      
+                      @media (min-width: 1200px){
+                        .template--safety .col-lg-5{
+                                    width: 41.66666667%;
+                              }
+      
+                        .template--safety .col-lg-offset-1 {
+                            margin-left: 8.33333333%;
+                          }
+                        .template--safety .col-lg-6 {
+                            width: 50%;
+                          }
+                        .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9 {
+                                float: left;
+                        }
+                        .template--safety .v-center {
+                            padding: 65px 0;
+                        }
+                      }
+                      .hide_policy{
+                        display:none;
+                      }
+                      .template--safety .rte td{
+                         display: table-cell;
+                      }
+                    .wrapper {
+                        display: flex;
+                        gap: 30px;
+                        width: 95%;
+                        margin: 0 auto;
+                        margin-top: 15px;
+                        flex-wrap: wrap;
+                    }
+                    .card {
+                      width: calc(25% - 22.5px);
+                      background: azur;
+                      padding: 30px;
+                      border-radius: 3px;
+                      box-sizing: border-box;
+                      color: #000;
+                      box-shadow: rgb(50 50 93 / 25%) 0px 30px 60px -12px,
+                        rgb(0 0 0 / 30%) 0px 18px 36px -18px;
+                    }
+                    .card-title {
+                      margin-top: 0;
+                      font-size: 16px;
+                      font-weight: 600;
+                      letter-spacing: 1.2px;
+                    }
+                    .card-content {
+                      font-size: 14px;
+                      letter-spacing: 0.5px;
+                      line-height: 1.5;
+                    }
+                    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      
+                    .card {
+                      width:calc(50% - 15px);
+                    }
+                    }
+                  @media only screen and (min-width: 320px) and (max-width: 767px) {
+                      .wrapper {
+                      display:block;
+                    }
+                    .card {
+                      width:100%;
+                  }
+                    .search1 select.section_two {
+            width: 95%;
+            padding: 5px;
+          }
+      
+                  }
+          p {
+          position: relative;
+          padding: 0;
+          margin: 0;
+          color: #080808;
+          transition: all 0.4s ease 0s;
+          }
+          .one p {
+          line-height: 0;
+          }
+          .one p {
+          text-align: center;
+          text-transform: uppercase;
+          padding-bottom: 5px;
+          font-size: 25px;
+          margin-top: 50px;
+          font-weight: 500;
+          }
+          .one p:before {
+          width: 52px;
+          height: 4px;
+          display: block;
+          content: "";
+          position: absolute;
+          bottom: 4px;
+          left: 50%;
+          margin-left: -22px;
+          background-color: #12607a;
+          }
+          .one p:after {
+          width: 270px;
+          height: 1px;
+          display: block;
+          content: "";
+          position: relative;
+          margin-top: 25px;
+          left: 50%;
+          margin-left: -130px;
+          background-color: #12607a;
+          }
+          select.section_two {
+            width: 55%;
+            margin: 0 auto;
+            display: flex;
+            padding: 5px;
+          }
+          .wrap{
+          width:100%
+      
+        }
+          .not_found_store{
+            text-align:center;
+            padding:20px;
+            font-size:30px;
+            display:none;
+          }
+      </style>
+<script>
+    $(document).ready(function(){
+        $('.section_two').change(function(){
+    var searchValue = $(this).parent('.search1').find('select').val().toLowerCase();
+        var i = 0;
+        $('.wrappers').each(function(){
+        var waperTest = $(this).find('p').text().toLowerCase();
+        console.log('waperTestwww',waperTest);
+        if(searchValue == waperTest){
+            $(this).parent('.main').show();
+            i = i + 1;
+        }else{
+            $(this).parent('.main').hide();
+        }
+        });
+        if(i != 0){
+        $('.not_found_store').hide();
+        }else{
+        $('.not_found_store').show();
+        }
+    });
+        });
+    </script>
+</head>
+<body>
+    <div id="myInput" style="width:100%">
+  
+        <div class="wrap">
+          <div class="search1">
+            <select action="" class="section_two" id="colorselector">
+              <option value="select your state">select your state</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Orissa">Orissa</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option vlaue="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="West Benga">West Benga</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+              <option value="Daman and Diu">Daman and Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Pondicherry">Pondicherry</option>
+            </select>
+          </div>
+        </div>
+      
+<!------------------Uttar Pradesh---------------------->
+
+        <div class="main">
+          <div class="wrappers one">
+            <p>Uttar Pradesh</p>
+          </div>
+          <div class="wrapper" id="myUL">
+            <div class="card">
+              <h3 class="card-title">Allahabad</h3>
+              <p class="card-content">
+                <span class="card_name">Mamta kumari<br></span>
+                Lakme salon George Town prayagraj<br>
+                3131/254 bhusoli tola khuldabad allahabad <br>
+                <span class="phone_number"> Ph:+917052228110</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Agra</h3>
+              <p class="card-content">
+                <span class="card_name">Sindhu priya <br></span>
+                Naturals<br>
+                #1221/A Ganga Street Ramnagar Colony<br>
+                <span class="phone_number">Ph:+917337547127</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Aligarh</h3>
+              <p class="card-content">
+                <span class="card_name">Subhi khan <br></span>
+                Looks salon<br>
+                Mariss road City centre Mall Aligarh<br>
+                <span class="phone_number">Ph:+917906756610</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Aligarh</h3>
+              <p class="card-content">
+                <span class="card_name">Subhi khan <br></span>
+                Looks salon<br>
+                Mariss road City centre Mall Aligarh<br>
+                <span class="phone_number">Ph:+917906756610</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Aligarh</h3>
+              <p class="card-content">
+                <span class="card_name">Imrana khan <br></span>
+                Looks salon Aligarh<br>
+                Citie centre mall, marris road, centre point<br>
+                <span class="phone_number">Ph:+918433217747</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Ghaziabad</h3>
+              <p class="card-content">
+                <span class="card_name"> Muskan Kaushik<br></span>
+                Lakme salon indrapuram<br>
+                Vaibhav Khand indrapuram Ghaziabad<br>
+                <span class="phone_number"> Ph:+918006490960</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Ghaziabad</h3>
+              <p class="card-content">
+                <span class="card_name"> Leela Negi<br></span>
+                Lakme Rajnagar<br>
+                D-35 first floor RDC Rajnagar, Ghaziabad<br>
+                <span class="phone_number"> +919650546746</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Lucknow</h3>
+              <p class="card-content">
+                <span class="card_name"> Nabina Adhikari<br></span>
+                Lakme salon for him and her indiranagar Lucknow<br>
+                C-987,church road ,indiranagar<br>
+                <span class="phone_number"> Ph:+918795277788</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Lucknow</h3>
+              <p class="card-content">
+                <span class="card_number"> Krishna Lodhi<br></span>
+                Lakme salon vijyantkhand<br>
+                Kattotha choraha<br>
+                <span class="phone_number"> Ph:+917607238266</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Lucknow</h3>
+              <p class="card-content">
+                <span class="card_number"> Barkha Jaiswal<br></span>
+                Lakme salon<br>
+                Apex Tower, Hazaratganj<br>
+                <span class="phone_number"> Ph:+919140866712</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Lucknow</h3>
+              <p class="card-content">
+                <span class="card_number"> Jainisha Talreja<br></span>
+                Marie Claire Paris<br>
+                First Floor, RSQUARE Building, Sector -I, LDA Colony, Kanpur Road Landmark:, opposite Khazana Market Chauraha,
+                Ashiyana<br>
+                <span class="phone_number"> Ph:+919044200012</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Lucknow</h3>
+              <p class="card-content">
+                <span class="card_name"> Rohit Kumar<br></span>
+                Marie Claire Salon<br>
+                First Floor, RSQUARE Building, Sector -I, LDA Colony, Kanpur Road Landmark:, opposite Khazana Market Chauraha,
+                Ashiyana<br>
+                <span class="phone_number"> Ph:+919369866159</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Lucknow</h3>
+              <p class="card-content">
+                <span class="card_name"> Neha Phull<br></span>
+                Marie claire salon<br>
+                1st floor R square building opposite khazana market chauraha<br>
+                <span class="phone_number"> Ph:+919151325875</span>
+              </p>
+            </div>
+     
+            
+            <div class="card">
+              <h3 class="card-title">Lucknow</h3>
+              <p class="card-content">
+                <span class="card_name"> Meenu kanojiya<br></span>
+                Marieclaie<br>
+                First Floor, RSQUARE Building, Sector -I, LDA Colony, Kanpur Road Landmark:, opposite Khazana Market Chauraha,
+                Ashiyana<br>
+                <span class="phone_number"> Ph:+917572097229</span>
+              </p>
+            </div>
+    
+            <div class="card">
+              <h3 class="card-title">Aligarh</h3>
+              <p class="card-content">
+                <span class="card_name"> Kajal kumari <br></span>
+                Looks salon<br>
+                Mariss road City centre Mall Aligarh<br>
+                <span class="phone_number"> Ph:+917248027525</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Kanpur</h3>
+              <p class="card-content">
+                <span class="card_name"> Aarti Maheta <br></span>
+                Lakme salon sarvodaya nagar kanpur<br>
+                117/k_18, sarvodaya nagar kanpur<br>
+                <span class="phone_number"> Ph:+918127139301</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Kanpur</h3>
+              <p class="card-content">
+                <span class="card_name"> Aradhana dhakarey <br></span>
+                looks unisex salon<br>
+                12A/1465madhavpuram kalyanpur<br>
+                <span class="phone_number"> Ph:+91 8630113899</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Kanpur</h3>
+              <p class="card-content">
+                <span class="card_name"> Meenakshi Gupta <br></span>
+                Tilak Nagar kanpur<br>
+                10/503 lakme salon tilak nagar kanpur<br>
+                <span class="phone_number"> Ph:+91 7860088207</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Kanpur</h3>
+              <p class="card-content">
+                <span class="card_name"> Neelu Rana <br></span>
+                Sarvodaya nagar<br>
+                117/k-18savodaya Nagar<br>
+                <span class="phone_number"> Ph:+91 7668313151</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Kanpur</h3>
+              <p class="card-content">
+                <span class="card_name"> Deepa Varma <br></span>
+                Lakme sarvodaya nagar kanpur<br>
+                117/k-18 sarvodaya nagar<br>
+                <span class="phone_number"> Ph:+91 7880330160</span>
+              </p>
+            </div>
+    
+            <div class="card">
+              <h3 class="card-title">Kanpur</h3>
+              <p class="card-content">
+                <span class="card_name"> Komal Sonkar <br></span>
+                Lakme saloon<br>
+                127A_lakme saloon vikas nagar kanpur<br>
+                <span class="phone_number"> Ph:+91 6386976933</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Kanpur</h3>
+              <p class="card-content">
+                <span class="card_name"> Aarti Maheta <br></span>
+                Lakme salon sarvodaya nagar kanpur<br>
+                117/k_18, sarvodaya nagar kanpur<br>
+                <span class="phone_number"> Ph:+918127139301</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Kanpur</h3>
+              <p class="card-content">
+                <span class="card_name"> Sandhya Rathore <br></span>
+                Sarvodaya nagar<br>
+                117/k_18sarovadaya nagar<br>
+                <span class="phone_number"> Ph:+91 9839185601</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Kanpur</h3>
+              <p class="card-content">
+                <span class="card_name"> poonam vishwakarma <br></span>
+                lakme<br>
+                127a_lakme salon vikas nager kanpur<br>
+                <span class="phone_number"> Ph:+91 9936273823</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+<!----------------Karnataka---------------->
+
+        <div class="main">
+          <div class="wrappers one">
+            <p>karnataka</p>
+          </div>
+          <div class="wrapper">
+    
+            <div class="card">
+              <h3 class="card-title">Gulbarga</h3>
+              <p class="card-content">
+                <span class="card_name"> Preeti Murthi<br></span>
+                Lakme salon<br>
+                Shop no 1-39/A, Besode district court<br>
+                <span class="phone_number"> Ph:+919137872289</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Ranjitha P Raju <br></span>
+                Lakme salon<br>
+                Lakme HSR layout 14 main 7th sector<br>
+                <span class="phone_number"> Ph:+919606291889</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Veda s <br></span>
+                Brigade gateway yashwanthpura<br>
+                Lakme brigade gateway malleshwaram<br>
+                <span class="phone_number"> Ph:+919739431609</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Arti <br></span>
+                Phoenix market city Mahadevpura<br>
+                Lg 64, Phoenix Market city, mahadevapura<br>
+                <span class="phone_number"> Ph:+918105732281</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Usha <br></span>
+                Lakme<br>
+                Bounce Unisex Salon, Lavelle road Vittal Mallya Road Shanthala Nagar Magnolia<br>
+                <span class="phone_number"> Ph:+917022385296</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Arti <br></span>
+                Phoenix market city mahadevpura<br>
+                LG.64, pheonix market city mahadevpura<br>
+                <span class="phone_number"> Ph:+918105732281</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Dipmala Sunar kami <br></span>
+                Envi spa &saloon<br>
+                Bengalore old madrash road orion up town mall<br>
+                <span class="phone_number"> Ph:+917676043377</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Tsering Dolma <br></span>
+                Toni & Guy<br>
+                No.852.ground floor 1st main road D block sahakarnagar<br>
+                <span class="phone_number"> Ph:+919101698604</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Toli Achumi <br></span>
+                Kimera wilness spa salon HSR layout<br>
+                3th floor bhagyalakshimi square close to Reliance digital HSR layout sector 3.<br>
+                <span class="phone_number"> Ph:+916362200509</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Karishma Subba <br></span>
+                Kimera wellness spa salon<br>
+                3rd floor bhagyalaxmi square close to leone grill<br>
+                <span class="phone_number"> Ph:+918123056113</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Rumi Basnet <br></span>
+                PMC Bangalore<br>
+                Lakme salon phoenix market city<br>
+                <span class="phone_number"> Ph:+919738624652</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Punam Iyengar <br></span>
+                Phoenix Marketcity Lakme Salon<br>
+                Lg 64, Phoenix Marketcity, Mahadevapura<br>
+                <span class="phone_number"> Ph:+919036344319</span>
+              </p>
+            </div>
+    
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Bishnu Dhimal <br></span>
+                Envi salon<br>
+                Old madhrash road orion up town mall envi salon<br>
+                <span class="phone_number"> Ph:+916360087032</span>
+              </p>
+            </div>
+    
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Maya Devadiga <br></span>
+                Envi salon and spa<br>
+                Envi Salon and Spa Shop no. 102 1st floor Dr, Rajkumaar Road, Rajajinagar 1st block Bangalore_560055<br>
+                <span class="phone_number"> Ph:+918617558331</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Usha S <br></span>
+                Lakme<br>
+                Bounce Unisex Salon, Lavelle road Vittal Mallya Road Shanthala Nagar Magnolia<br>
+                <span class="phone_number"> Ph:+917022385296</span>
+              </p>
+            </div>
+      
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Usha <br></span>
+                Lakme<br>
+                Bounce Unisex Salon, Lavelle road Vittal Mallya Road Shanthala Nagar Magnolia<br>
+                <span class="phone_number"> Ph:+917022385296</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Swetha E <br></span>
+                Lakme salon ramamurthy nagar bangalore<br>
+                JBJ Complex, 1st floor, east of NGEF layout, ramamurthy nagar main Road, opp. Indian petrol bunk, Above Airtel
+                store<br>
+                <span class="phone_number"> Ph:+918722827038</span>
+              </p>
+            </div>
+      
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Deepa Chettri <br></span>
+                Brookfield<br>
+                207 2nd floor, lakme salon, Brookfield mall<br>
+                <span class="phone_number"> Ph:+916360886348</span>
+              </p>
+            </div>
+    
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Sampoorna Reddy <br></span>
+                Kimera jp nagar<br>
+                Med plus building opp Elita exit gate<br>
+                <span class="phone_number"> Ph:+919738666866</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Rabina Pradhan <br></span>
+                Kimera jp nagar<br>
+                Medplus building opp elita exit gate<br>
+                <span class="phone_number"> Ph:+916380866398</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> SunitaRai Rai <br></span>
+                Salt and pepper unisex salon HSR layout<br>
+                Hsr Layout Bangalore<br>
+                <span class="phone_number"> Ph:+918310895800</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Chime lamu Bhutia <br></span>
+                Salt and pepper<br>
+                2633 27th main 13th cross RD HSR LAYOUT 1ST sector banglore Karnataka 560102<br>
+                <span class="phone_number"> Ph:+919353339349</span>
+              </p>
+            </div>
+    
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Uma Bhujel <br></span>
+                Koramangala 5th block<br>
+                100/1,1st floor kphb colony 5th cross 5th block Bangalore 560095<br>
+                <span class="phone_number"> Ph:+918250053035</span>
+              </p>
+            </div>
+         
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Dipmala Sunar kami <br></span>
+                Envi spa &saloon<br>
+                Bengalore old madrash road orion up town mall<br>
+                <span class="phone_number"> Ph:+917676043377</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Bishnu Dhimal <br></span>
+                Envi salon<br>
+                Old madhrash road orion up town mall envi salon<br>
+                <span class="phone_number"> Ph:+916360087032</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Bangalore</h3>
+              <p class="card-content">
+                <span class="card_name"> Usha <br></span>
+                Lakme<br>
+                Bounce Unisex Salon, Lavelle road Vittal Mallya Road Shanthala Nagar Magnolia<br>
+                <span class="phone_number"> Ph:+917022385296</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+    <!---------------Bihar--------------->
+
+        <div class="main" id="bihar">
+          <div class="wrappers one">
+            <p>Bihar</p>
+          </div>
+          <div class="wrapper">
+            <div class="card">
+              <h3 class="card-title">Bihar</h3>
+              <p class="card-content">
+                <span class="card_name"> ANISHA PRIYA <br></span>
+                Lakme Salon Katira Road Ara<br>
+                1st Floor, Bishwanath Complex, Pakri, Katira Rd, Ayodhyapuri, Arrah, Bihar 802301<br>
+                <span class="phone_number"> Ph:+919891154540</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Bihar</h3>
+              <p class="card-content">
+                <span class="card_name"> Vinita Saxena <br></span>
+                Lakme salon Ara<br>
+                1st Floor, vishwanath complex, PakriKatira Road, Ayodhya Puri Ara Bhojpur Bihar -802301<br>
+                <span class="phone_number"> Ph:+919811637355</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Bihar</h3>
+              <p class="card-content">
+                <span class="card_name"> Arju Sharma <br></span>
+                Lakme salon katihar<br>
+                Binodpur Katihar prabhuji complex 1st floor<br>
+                <span class="phone_number"> Ph:+917856010665</span>
+              </p>
+            </div>
+         
+            <div class="card">
+              <h3 class="card-title">Bihar</h3>
+              <p class="card-content">
+                <span class="card_name"> Nibha Singh <br></span>
+                Lakme salon biharsharif<br>
+                Bhaisasur chowk biharsharif<br>
+                <span class="phone_number"> Ph:+916201453580</span>
+              </p>
+            </div>
+     
+          </div>
+        </div>
+
+<!---------------------Haryana------------------->
+
+        <div class="main">
+          <div class="wrappers one">
+            <p>Haryana</p>
+          </div>
+          <div class="wrapper">
+     
+            <div class="card">
+              <h3 class="card-title">Gurgaon</h3>
+              <p class="card-content">
+                <span class="card_name">Leela Singh<br></span>
+                Gurgaon 56<br>
+                Sco68 first floor Shop no 61 near more market<br>
+                <span class="phone_number"> Ph:+919958205014</span>
+              </p>
+            </div>
+     
+      
+            <div class="card">
+              <h3 class="card-title">Faridabad</h3>
+              <p class="card-content">
+                <span class="card_name"> Dolly Kumari <br></span>
+                Lakme salon faridabad<br>
+                SCF 1, Main Market, Sector 14, near SBI, Faridabad, Haryana Area Lakame salon, Haryana Faridabad-121007,<br>
+                <span class="phone_number"> Ph:+916304133077</span>
+              </p>
+            </div>
+       
+            <div class="card">
+              <h3 class="card-title">Gurgaon</h3>
+              <p class="card-content">
+                <span class="card_name"> Anuradha Mishra<br></span>
+                Lakme salon gurgaon sector 56<br>
+                Gurgaon sector 56 more supermarket<br>
+                <span class="phone_number"> Ph:+916387662027</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Gurgaon</h3>
+              <p class="card-content">
+                <span class="card_name"> Rajni Aganpal<br></span>
+                Gurgaon sec 56<br>
+                1st floor more super market sco 68 block B sector 56 gurugram<br>
+                <span class="phone_number"> Ph:+919958205014</span>
+              </p>
+            </div>
+     
+          </div>
+        </div>
+
+<!-----------------Orissa------------------>
+
+        <div class="main">
+          <div class="wrappers one">
+            <p>Orissa</p>
+          </div>
+          <div class="wrapper">
+     
+            <div class="card">
+              <h3 class="card-title">Orissa</h3>
+              <p class="card-content">
+                <span class="card_name"> Sharmistha Sarap<br></span>
+                Lakme salon Cuttack<br>
+                2nd floor,38,28, cantonment road above Malabar gold jewellery, Biju Patnaik colony Cuttack Odisha 753001<br>
+                <span class="phone_number"> Ph:+91 7855853909</span>
+              </p>
+            </div>
+          </div>
+        </div>
+     
+              <h3 class="card-title">Chandigarh</h3>
+              <p class="card-content">
+                <span class="card_name"> Anjali Anju<br></span>
+                Nisha lambha Chandigarh<br>
+                Sector 44-C Chandigarh<br>
+                <span class="phone_number"> Ph:+91 8427162681</span>
+              </p>
+            </div> 
+          </div>
+        </div>
+
+<!------------------------Maharashtra------------------>
+
+        <div class="main">
+          <div class="wrappers one">
+            <p>Maharashtra</p>
+          </div>
+          <div class="wrapper">
+      
+            <div class="card">
+              <h3 class="card-title">Mumbai</h3>
+              <p class="card-content">
+                <span class="card_name"> Kamini Pawar <br></span>
+                Ramnagar Dombivli East<br>
+                Shop 1, asha palace, Ramnagar, Dombivli East, Dombivli, Maharashtra 421201<br>
+                <span class="phone_number"> Ph:+91 9860719388</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Aurangabad</h3>
+              <p class="card-content">
+                <span class="card_name"> Anita Kumari <br></span>
+                Aurangabad Lakme salon<br>
+                Lakme salon J.K Hotel,ward No-11,New Area,MS Road,Maharana Partap Nagar, Bihar, 824101<br>
+                <span class="phone_number"> Ph:+918918701650</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Nizamabad</h3>
+              <p class="card-content">
+                <span class="card_name"> ANISHA Davi <br></span>
+                ArmorLakme salon<br>
+                armoor nizamabad road opp HDFC Bank 1fst folr Lakme salon<br>
+                <span class="phone_number"> Ph:+919140756262</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Mumbai</h3>
+              <p class="card-content">
+                <span class="card_name"> Neha Khan<br></span>
+                Lakme salon walkeswar<br>
+                Seaface Krishna niwas co-op, Hsg,, society Ltd,Shop No.1, 58-A, walkeswar road.sital baug,Mumbai 400006<br>
+                <span class="phone_number"> Ph:+917447885741</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Mumbai</h3>
+              <p class="card-content">
+                <span class="card_name"> Anisha Punjabi <br></span>
+                Kalyan Lakme salon<br>
+                Khadkpada circle tulip building shop 3,4 near flower valley kalyan west ..<br>
+                <span class="phone_number"> Ph:+91 8805328304</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Mumbai</h3>
+              <p class="card-content">
+                <span class="card_name"> Gayatri Bhariste <br></span>
+                Kalyan Lakme salon<br>
+                Khadakpada circle Lakme salon tulip building shop no 3,4 near flower velley Kalyan west..<br>
+                <span class="phone_number"> Ph:+91 9867475182</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+<!-- ------------------Tamil Nadu----------------- -->
+
+        <div class="main">
+          <div class="wrappers one">
+            <p>Tamilnadu</p>
+          </div>
+          <div class="wrapper">
+            <div class="card">
+              <h3 class="card-title">Tamilnadu</h3>
+              <p class="card-content">
+                <span class="card_name"> Sagarika Roy <br></span>
+                Lakme Salon<br>
+                Nethaji Bypass Road, Opp Ranga Department<br>
+                <span class="phone_number"> Ph:+917904858650</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Tamilnadu</h3>
+              <p class="card-content">
+                <span class="card_name"> Priya G <br></span>
+                Essensuals race course<br>
+                #32 , ground floor , race course road<br>
+                <span class="phone_number"> Ph:+91 9629316999</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Tamilnadu</h3>
+              <p class="card-content">
+                <span class="card_name"> Fiverose Banu <br></span>
+                Lakme Salon<br>
+                Nethaji by pass road, opp Ranga department store<br>
+                <span class="phone_number"> Ph:+91 7904858650</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Tamilnadu</h3>
+              <p class="card-content">
+                <span class="card_name"> Sagarika Roy <br></span>
+                Lakme salon<br>
+                Nethaji bypass road, opp ranga department store<br>
+                <span class="phone_number"> Ph:+91 7904858650</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+<!-- -------------------Punjab-------------------- -->
+
+        <div class="main" id="Punjab">
+          <div class="wrappers one">
+            <p>Punjab</p>
+          </div>
+          <div class="wrapper">
+            <div class="card">
+              <h3 class="card-title">Ferozepur</h3>
+              <p class="card-content">
+                <span class="card_name"> Mandeep Kaur <br></span>
+                Lakme saloon<br>
+                Lakme saloon udham singh chowak near City chruch Ferozepur<br>
+                <span class="phone_number"> Ph:+91 8872881399</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Punjab</h3>
+              <p class="card-content">
+                <span class="card_name"> Rukhsar Karbhari <br></span>
+                Lakme salon kharar sunny enclave<br>
+                Sco-66 sector -125 sunny enclave kharar<br>
+                <span class="phone_number"> Ph:+91 7045372737</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Punjab</h3>
+              <p class="card-content">
+                <span class="card_name"> Preeti Preeti <br></span>
+                Lakme salon sarabha nagar, Ludhiana<br>
+                67D Lakme salon sarabha nagar<br>
+                <span class="phone_number"> Ph:+91 9814605255</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Punjab</h3>
+              <p class="card-content">
+                <span class="card_name"> Manisha Kapse <br></span>
+                Lakme salon<br>
+                Shop no.3,shiv kutir, opposite hotel amigo vs marg,shivaji park<br>
+                <span class="phone_number"> Ph:+91 7977835754</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Gurdaspur</h3>
+              <p class="card-content">
+                <span class="card_name"> Mandeep Kaur<br></span>
+                Lakme salon<br>
+                Ss tower. Near congress bhawan, civil lines road gurdaspur<br>
+                <span class="phone_number"> Ph:+918006490960</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Jalandhar</h3>
+              <p class="card-content">
+                <span class="card_name"> Neena Kumari<br></span>
+                Lakme salon Vijay nagar jalandhar<br>
+                77/76 mahavir marg near football chowk<br>
+                <span class="phone_number"> Ph:+918427784625</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Jalandhar</h3>
+              <p class="card-content">
+                <span class="card_name"> Jyoti<br></span>
+                Lakme salon vijay nagar<br>
+                76/77mahavir marg near football chowk<br>
+                <span class="phone_number"> Ph:+919877531672</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Punjab</h3>
+              <p class="card-content">
+                <span class="card_name"> Anmol Sharma <br></span>
+                Lakme civil lines<br>
+                86/2, government college road, rose garden , civil lines ludhiana<br>
+                <span class="phone_number"> Ph:+91 6280469627</span>
+              </p>
+            </div>
+     
+          </div>
+        </div>
+
+
+<!-- -------------------Hyderabad----------------- -->
+        
+        <div class="main">
+          <div class="wrappers one">
+            <p>Telangana</p>
+          </div>
+          <div class="wrapper">
+            <div class="card">
+              <h3 class="card-title">Hyderabad</h3>
+              <p class="card-content">
+                <span class="card_name"> Thejavath veeramani <br></span>
+                Lakme salon madhapur<br>
+                Lakme salon madhapur next to the rathnadeep sun towers building 1st floor Hyderabad 500081<br>
+                <span class="phone_number"> Ph:+918978742792</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Hyderabad</h3>
+              <p class="card-content">
+                <span class="card_name"> Deepa Sharma <br></span>
+                Envi salon in spa<br>
+                H no.8-2-684/3/162, road no 12, Banjara hills<br>
+                <span class="phone_number"> Ph:+918247445457</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Hyderabad</h3>
+              <p class="card-content">
+                <span class="card_name"> Sangaylamu Sherpa <br></span>
+                Envi salon (forum) Nexus mall hyderabad<br>
+                Forum sujana mall kukatpall 12&13<br>
+                <span class="phone_number"> Ph:+918919493796</span>
+              </p>
+            </div>
+    
+            <div class="card">
+              <h3 class="card-title">Hyderabad</h3>
+              <p class="card-content">
+                <span class="card_name"> Deepa Bhattaral <br></span>
+                Envi salon<br>
+                H no.8-2-684/3/162, road no 12, Banjara hills<br>
+                <span class="phone_number"> Ph:+918247445457</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Hyderabad</h3>
+              <p class="card-content">
+                <span class="card_name"> Maya Pradhan <br></span>
+                Envi salon (forum) Nexus mall hyderabad<br>
+                Nexus (Forum sujana) mall Envi salon L.G floor<br>
+                <span class="phone_number"> Ph:+919083011213</span>
+              </p>
+            </div>
+     
+          
+<!-- -----------------Delhi------------------ -->
+
+        <div class="main" id="Delhi">
+          <div class="wrappers one">
+            <p>Delhi</p>
+          </div>
+          <div class="wrapper">
+            <div class="card">
+              <h3 class="card-title">Delhi</h3>
+              <p class="card-content">
+                <span class="card_name"> Usha Kumari<br></span>
+                Lakme salon preet vihar<br>
+                1st floor, 13 shankar vihar, main, vikas marg, opp, metro pillar number 72 , preet vihar delhi<br>
+                <span class="phone_number"> Ph:+917683017896</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Delhi</h3>
+              <p class="card-content">
+                <span class="card_name"> Gurdev Singh<br></span>
+                Style n scissors<br>
+                38-39 SDC building Mauji colony Calgary road Malviya Nagar<br>
+                <span class="phone_number"> Ph:+919783652890</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Delhi</h3>
+              <p class="card-content">
+                <span class="card_name"> Bharti Bacchas<br></span>
+                Preet vihar lakme salon<br>
+                1 st floor,Shankar vihar, preet vihar delhi 92<br>
+                <span class="phone_number"> Ph:+919643449232</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Delhi</h3>
+              <p class="card-content">
+                <span class="card_name"> Bharti Bacchas<br></span>
+                Lakme salon<br>
+                1st floor, shankar vihar, preet vihar, delhi 92<br>
+                <span class="phone_number"> Ph:+919643449232</span>
+              </p>
+            </div>
+           
+    
+            <div class="card">
+              <h3 class="card-title">Delhi</h3>
+              <p class="card-content">
+                <span class="card_name"> Aarti Singh<br></span>
+                Lakme salon CR park<br>
+                B315 upper ground Lakme salon CR park<br>
+                <span class="phone_number"> Ph:+919205264869</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Delhi</h3>
+              <p class="card-content">
+                <span class="card_name"> Shruti Jain<br></span>
+                Looks salon<br>
+                17A,22 Ajmal Khan road, block -7 , block -10 Karol Bagh<br>
+                <span class="phone_number"> Ph:+917827252526</span>
+              </p>
+            </div>
+     
+           
+    
+          </div>
+        </div>
+
+<!-- -------------------Gujarat----------------- -->
+
+        <div class="main">
+          <div class="wrappers one">
+            <p>Gujarat</p>
+          </div>
+          <div class="wrapper">
+            <div class="card">
+              <h3 class="card-title">Gujarat</h3>
+              <p class="card-content">
+                <span class="card_name"> Tabassum Shaikh <br></span>
+                Surdhara circle thalej ahemadabad<br>
+                G/17maple tree complex thaltej<br>
+                <span class="phone_number"> Ph:+919558396331</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Gujarat</h3>
+              <p class="card-content">
+                <span class="card_name">Ritu Shankhwar <br></span>
+                Lakme salon<br>
+                Safayar bilding first floor Lakme salon CG road<br>
+                <span class="phone_number">Ph:+919099163734</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Gujarat</h3>
+              <p class="card-content">
+                <span class="card_name"> Priya Solanki <br></span>
+                Lakme salon<br>
+                Shipper complex , 1 floor cg road Ahmedabad<br>
+                <span class="phone_number"> Ph:+917600893353</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Gujarat</h3>
+              <p class="card-content">
+                <span class="card_name"> Dhara Vaidya <br></span>
+                Lakme salon<br>
+                Shipper complex, 1 floor cgroad Ahmadabad<br>
+                <span class="phone_number">Ph:+919558034507</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="main">
+          <div class="wrappers one">
+            <p>Tamil Nadu</p>
+          </div>
+          <div class="wrapper">
+            <div class="card">
+              <h3 class="card-title">Tamil Nadu</h3>
+              <p class="card-content">
+                <span class="card_name"> Prabika Pradhan <br></span>
+                Toni and guy Villivakkam<br>
+                175 nsk nagar 9 street<br>
+                <span class="phone_number"> Ph:+919677292014</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Chennai</h3>
+              <p class="card-content">
+                <span class="card_name"> Aruna sunder<br></span>
+                Alwerpet Lakme<br>
+                37A cv Raman road alwerpet<br>
+                <span class="phone_number"> Ph:+918939259149</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Chennai</h3>
+              <p class="card-content">
+                <span class="card_name"> Salomy<br></span>
+                Besant nagar<br>
+                No28/1 MG road malaviya avenue3rdst ch .41<br>
+                <span class="phone_number"> Ph:+919710721340</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Chennai</h3>
+              <p class="card-content">
+                <span class="card_name"> Rajeshwari Anitha<br></span>
+                K k nagar<br>
+                1065 ,munuswamy Salai,above Apollo pharmacy,kk nagar West ,kk nagar<br>
+                <span class="phone_number"> Ph:+919840245150</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Chennai</h3>
+              <p class="card-content">
+                <span class="card_name"> Revathi Vedhanayagam<br></span>
+                Lakme kodambakkam<br>
+                No. 8B.Lakshmi laya apartments Dr. Ambedkar Road, Ashok Nagar mani Road kodambakkam.<br>
+                <span class="phone_number"> Ph:+919941455622</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Chennai</h3>
+              <p class="card-content">
+                <span class="card_name"> Kavitha G<br></span>
+                Kodambakkam<br>
+                Lakme salon 8b Lakshmi laya apartments, dr ambedkar road<br>
+                <span class="phone_number"> Ph:+917200466267</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Chennai</h3>
+              <p class="card-content">
+                <span class="card_name"> Rajalakshmi. P<br></span>
+                Lakme Kilpauk<br>
+                8 a Balfour road kilpauk icici bank chennai. 10<br>
+                <span class="phone_number"> Ph:+919840208533</span>
+              </p>
+            </div>
+     
+            <div class="card">
+              <h3 class="card-title">Chennai</h3>
+              <p class="card-content">
+                <span class="card_name"> Envi salon<br></span>
+                G-40A.Lower ground floor pheonix market city mall.velechary road.indira gandhi nagar.<br>
+                <span class="phone_number"> Ph:+918787740791</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Chennai</h3>
+              <p class="card-content">
+                <span class="card_name"> Akash<br></span>
+                No. 28 Ayapakkam chruch street near Ambattur chennai<br>
+                <span class="phone_number"> Ph:+919566128507</span>
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Chennai</h3>
+              <p class="card-content">
+                <span class="card_name"> Kalai M<br></span>
+                Tony and guy Essensuals<br>
+                34/W82B, Park Rd, B-Sector, Anna Nagar West Extension, Chennai, Tamil Nadu 600101<br>
+                <span class="phone_number"> Ph:+918667875198</span>
+              </p>
+            </div>
+     
+          </div>
+        </div>
+        <div class="not_found_store">
+          <p>No Record Found !</p>
+        </div>
+      </div>
+     
+</body>
+</html>

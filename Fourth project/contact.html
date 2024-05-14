@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University website design</title>
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Josefin+Sans:wght@200;300&family=Poppins:
+                wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="./index.html"><img src="./IMAGES/university logo2.jpg"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="course.html">Course</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i>
+        </nav>
+        <h1>Contact Us</h1>
+    </section>
+
+    <!-------------- Contact us -------------->
+
+    <section class="location">
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28018.554887134418!2d77.34283500486431!3d28.
+        620189097127753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5456ef36d9f%3A0x3b7191b1286136c8!2s
+        Sector%2062%2C%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1659773206214!5m2!1sen!2sin"  width="600" 
+        height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when
+        -downgrade"></iframe>
+    
+    </section>
+
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div> 
+                    <i class="fa fa-home"></i>
+                    <span>
+                        <h5>XYZ Building</h5>
+                        <p>Noida, Uttarpradesh, INDIA</p>
+                    </span>
+                </div>
+                <div> 
+                    <i class="fa fa-phone"></i>
+                    <span>
+                        <h5>+10-9876543210</h5>
+                        <p>Monday to Saturday, 10AM to 6PM</p>
+                    </span>
+                </div>
+                <div> 
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>
+                        <h5>info@demoweb.com</h5>
+                        <p>Email us your query</p>
+                    </span>
+                </div>
+            </div>
+            <div class="contact-col">
+                <form action="">
+                    <input type="text" placeholder="Enter your Name" required>
+                    <input type="email" placeholder="Enter email address" required>
+                    <input type="text" placeholder="Enter your subject" required>
+                    <textarea rows="8" placeholder="Message" required></textarea>
+                    <button type="submit" class="hero-btn red-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+        
+
+    
+
+
+   <section class="footer">
+       <h4>ABOUT US</h4>
+       <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, saepe! 
+           Ratione vero reprehenderit tenetur, ipsum culpa est. Fugiat, molestiae officiis.<br> jnsd kjsndjdw jdi kjdjwedwe 
+            dsjdbjhdw kjsadkjd jdygf iuhfuef kjwue diuew fife jhfiuher hwehf </P>
+            <div class="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+            </div>
+   </section>
+
+
+
+
+
+
+    <!-- Javascript for Toggle menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+    </script>
+    
+</body>
+</html>

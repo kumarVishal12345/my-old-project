@@ -1,0 +1,38 @@
+/* NAVIGATION */
+.navbar{
+    flex-direction: column;
+}
+.navbar img{
+    padding-bottom: 1px;
+}
+.navbar ul li a{
+    font-size: 1rem;
+    padding: 0px 3px;
+}
+/* HOME SECTION */
+.home{
+    height: 450px;
+    padding: 3px 70px;
+}
+.home::before{
+    height: 650px;
+}
+.home p{
+    font-size: 15px;
+}
+/* SERVICES SECTION*/
+.services{
+    margin-top: 12px;
+}
+#id1{
+    flex-direction: column;
+}
+/* CLIENT SECTION */
+#clients{
+    overflow: hidden;
+}
+/* CONTACT SECTION */
+#contact{
+    margin-top: -2px;
+}
+/* FOOTER */

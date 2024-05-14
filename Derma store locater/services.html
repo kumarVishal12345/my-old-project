@@ -1,0 +1,47 @@
+<!-- Select your city section -->
+<div class="wrap">
+    <div class="search2">
+      <select action="" class="section_city" id="cityselector">
+        <option value="select your city">Select your city</option>
+        <option value="pune">Pune</option>
+        <option value="mumbai">Mumbai</option>
+        <option value="delhi">Delhi</option>
+        <!-- Add more city options as needed -->
+      </select>
+    </div>
+  </div>
+  <script>
+  $('document').ready(function(){
+    // State dropdown change event
+    $('.section_two').change(function(){
+      var selectedState = $(this).val().toLowerCase();
+      filterSalons(selectedState);
+    });
+    
+    // City dropdown change event
+    $('.section_city').change(function(){
+      var selectedCity = $(this).val().toLowerCase();
+      filterSalons(selectedCity);
+    });
+  
+    function filterSalons(selectedValue) {
+      var i = 0;
+      $('.salon-locater tr').each(function(){
+        var wrapperTest = $(this).attr('attr');
+        if(selectedValue === wrapperTest){
+          $(this).show();
+          i = i + 1;
+        } else {
+          $(this).hide(); 
+        }
+        
+        if(i !== 0) {
+          $('.not_found_store_hh').hide();
+        } else {
+          $('.not_found_store_hh').show();
+        }
+      });
+    }
+  });
+</script>
+    

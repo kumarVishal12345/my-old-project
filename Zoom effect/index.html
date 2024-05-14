@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <div class="big-image">
+                <img src="../Images/lake-green-mountain-with-nice-sky-blue-water-lake-into-mountains-hills-green-jungle_510654-332.avif" id="zoom">
+            </div>
+
+            <div class="small-image">
+                <img src="../Images/beautiful-architecture-ancient-ruins-temple-hampi-sunset-karnataka-india_211251-1232.avif">
+                <img src="../Images/beautiful-shot-isa-khan-s-tomb-delhi-india-cloudy-sky_181624-20750.avif">
+                <img src="../Images/beautiful-wooden-pathway-going-breathtaking-colorful-trees-forest_181624-5840.avif">
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Natural world</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit est ratione enim nostrum odio voluptatibus?</p>
+
+            <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <div class="price">Rs. 1000/- <span>Rs. 1400/- </span></div>
+            <a href="#"><button class="button">add to cart <i class='fa fa-shopping-cart'></i></button></a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script>
+   
+<script src="zooms1.min.js" defer></script>
+<script>
+    $(document).ready(function(){
+    $('.small-image img').click(function(){
+        var image = $(this).attr('src');
+        $('.big-image img').attr('src', image);
+    });
+    $('#zoom').imagezooms1();
+});
+
+</script>
+
+    </script>
+</body>
+</html>
+
+
+

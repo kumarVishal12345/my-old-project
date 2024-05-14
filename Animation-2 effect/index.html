@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mouse Move Cursor Effect</title>
+     <style>
+                body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                        }
+
+            .cursor {
+                width: 20px;
+                height: 20px;
+                background-color: #3498db;
+                border-radius: 50%;
+                position: fixed;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                transition: all 0.3s ease;
+                z-index: 9999;
+                opacity: 0;
+            }
+
+            .hovered {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0.7;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="content">
+        <h1 class="hover-effect">Mouse Move Cursor Effect</h1>
+        <p class="hover-effect">Hover over this text to see the cursor effect!</p>
+        
+    </div>
+    <script>
+       const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.pageX + 'px';
+    cursor.style.top = e.pageY + 'px';
+});
+
+const hoverElements = document.querySelectorAll('.hover-effect');
+
+hoverElements.forEach(element => {
+    element.addEventListener('mouseover', () => {
+        cursor.classList.add('hovered');
+    });
+    element.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hovered');
+    });
+});
+
+    </script>
+</body>
+</html>

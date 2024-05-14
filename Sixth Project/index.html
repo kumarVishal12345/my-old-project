@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+             <a href="#"><img src="../Images/colorful-letter-gradient-logo-design_474888-2309 (1).avif"></a>
+            </div>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="icon">
+               <i class="fa fa-search"></i>
+               <a href="#">Login</a>
+            </div>
+        </nav>
+        <section class="h-text">
+            <i class="fa fa-camera" id="camera"></i>
+            <h1>Capturing my best to show you the WORLD</h1>
+            <input type="text" placeholder="Search here...">
+            <button><i class="fa fa-search"></i></button>
+        </section>
+    </header>
+
+    <!-- -----------Second Section--------------->
+
+    <section class="filter-gallery">
+        <div class="portfolio-menu">
+            <ul>
+                <li class="active" data-filter="*">All</li>
+                <li data-filter=".nature">Nature</li>
+                <li data-filter=".fashion">Fashion</li>
+                <li data-filter=".wedding">Wedding</li>
+            </ul>
+        </div>
+        <div class="portfolio-item">
+            <div class="item nature">
+                <img src="../Images/photo-1525127752301-99b0b6379811.avif" width="100px" height="100px">
+            </div>
+            <div class="item fashion">
+                <img src="../Images/beautiful-architecture-ancient-ruins-temple-hampi-sunset-karnataka-india_211251-1232.avif" width="100px" height="100px">
+            </div>
+            <div class="item wedding">
+                <img src="../Images/photo-1546587348-d12660c30c50.avif" width="100px" height="100px">
+            </div>
+            <div class="item nature">
+                <img src="../Images/photo-1482148454461-aaedae4b30bb.avif" width="100px" height="100px">
+            </div>
+            <div class="item fashion">
+                <img src="../Images/photo-1522277245807-5e608aa8adcd.avif" width="100px" height="100px">
+            </div>
+            <div class="item wedding">
+                <img src="../Images/photo-1519293978507-9c6bb9f82eda.avif" width="100px" height="100px">
+            </div>
+            <div class="item nature">
+                <img src="../Images/photo-1485081669829-bacb8c7bb1f3.avif" width="100px" height="100px">
+            </div>
+            <div class="item fashion">
+                <img src="../Images/photo-1500614922032-b6dd337b1313.avif" width="100px" height="100px">
+            </div>
+            <div class="item wedding">
+                <img src="../Images/lake-green-mountain-with-nice-sky-blue-water-lake-into-mountains-hills-green-jungle_510654-332.avif" width="100px" height="100px">
+            </div>
+            <div class="item nature">
+                <img src="../Images/photo-1416862291207-4ca732144d83.avif" width="100px" height="100px">
+            </div>
+            <div class="item fashion">
+                <img src="../Images/skogafoss-waterfall-iceland-guy-red-jacket-looks-skogafoss-waterfall_335224-593.avif" width="100px" height="100px">
+            </div>
+            <div class="item wedding">
+                <img src="../Images/photo-1414872785488-7620d2ae7566.avif" width="100px" height="100px">
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <script>
+        $('.portfolio-item').isotope({
+        // options
+        itemSelector: '.item',
+        layoutMode: 'fitRows'
+        });
+
+        $('.portfolio-menu ul li').click(function(){
+        $('.portfolio-menu ul li').removeClass('active');
+        $(this).addClass('active');
+
+        var selector = $(this).attr('data-filter');
+        $('.portfolio-item').isotope({
+            filter:selector
+        });
+        return false;
+        });
+    </script>
+
+</body>
+</html>

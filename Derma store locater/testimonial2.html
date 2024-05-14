@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <style>
+        .sample-slider{
+            width:70%;
+        }
+        .sample-slider img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+<div class="nutraj-main" style="background-image: url('{{ section.settings.nutraj-bg-image | img_url: 'original' }}');">
+
+    <div class="nutraj-row">
+     <div class="nutraj-column nutraj-column-1">
+       <h1 class="nutraj-head">{{ section.settings.nutraj-head }}</h1>
+       <p class="nutraj-para">{{ section.settings.nutraj-para }}</p>
+       <div class="button-section">
+         <input type="button" class="custom-button" value="{{ section.settings.button-label }}">
+       </div>
+     </div>
+     <div class="nutraj-column nutraj-column-2">
+       <img src="{{ section.settings.nutraj-image | img_url: '' }}">
+     </div>
+   </div>
+       <div class="nutraj-li">
+         <p>{{section.settings.nutraj-li }}</p>
+       </div>
+ 
+    {% for block in section.blocks %}
+       <div class="nutraj-group">
+         <img src="{{ block.settings.nutraj-group | img_url: '' }}">
+       </div>
+      {% endfor %}
+ </div>
+ 
+ 
+ 
+ {% schema %}
+   {
+     "name": "nutraj",
+     "settings": [
+        {
+       "type": "image_picker",
+       "id": "nutraj-bg-image",
+       "label": "Background Image"
+     },
+        {
+   "type": "html",
+   "id": "nutraj-head",
+   "label": "Video embed"
+ },
+        {
+   "type": "text",
+   "id": "nutraj-para",
+   "label": "Heading",
+   "default": "Quick links"
+ },
+   {
+       "type": "text",
+       "id": "button-label",
+       "label": "Button Label",
+       "default": "Click Me"
+     },
+       {
+         "type": "image_picker",
+         "id": "nutraj-image",
+         "label": "Image"
+       },
+        {
+         "type": "html",
+         "id": "nutraj-li",
+         "label": "text"
+       }
+       
+     ],
+      "blocks": [
+      {
+        "name": "nutraj",
+        "type": "slide",
+        "settings": [
+         {
+         "type": "image_picker",
+         "id": "nutraj-group",
+         "label": "Image"
+       }
+        ]
+      }
+      ],
+         "presets": [
+                          {
+                               "name":"nutraj",
+                               "category":"custom"
+                          }
+                       ]
+   }
+ {% endschema %}
+ 
+ {% stylesheet %}
+  .nutraj-head{
+    font-weight:500;
+  }
+  .nutraj-row {
+   display: flex;
+   justify-content: space-between;
+ }
+ 
+ .nutraj-column {
+   flex: 1;
+   padding: 20px;
+   box-sizing: border-box;
+ }
+   .nutraj-column .nutraj-para{
+     text-transform: capitalize;
+     font-size:18px;
+   }
+ 
+ .nutraj-column-1 {
+     margin: 70px 20px 0px 100px;
+ }
+   .custom-button {
+       background-color:#333;
+       color: white;
+       padding: 10px 20px;
+       border: none;
+       cursor: pointer;
+       font-size: 16px;
+ }
+ 
+ .custom-button:hover {
+   background-color: #000000; 
+ }
+  .nutraj-column-2 img {
+     height: 550px;
+     width: 100%;
+ }
+   .nutraj-li{
+     margin-left: 6%;
+   }
+   .nutraj-group {
+     margin-left: 7%;
+     margin-top: 3%;
+     width: 15%;
+ }
+ 
+ .nutraj-group {
+    display: inline-block;
+ }
+   .nutraj-group img{
+     height: 350px;
+     border-radius: 23px;
+     border: 4px solid #FFF;
+     fill: #FFF;
+     filter: drop-shadow(0px 0.8930720686912537px 2.7479140758514404px rgba(0, 0, 0, 0.02)) drop-shadow(0px 2.258646249771118px 6.949680805206299px rgba(0, 0, 0, 0.03)) drop-shadow(0px 4.607426643371582px 14.176697731018066px rgba(0, 0, 0, 0.03)) drop-shadow(0px 9.49042797088623px 29.201316833496094px rgba(0, 0, 0, 0.04)) drop-shadow(0px 26px 80px rgba(0, 0, 0, 0.06));
+   }
+ 
+ 
+   <------------Media query----------->
+ 
+ 
+ 
+ 
+ @media (max-width: 768px) {
+ 
+ .nutraj-row {
+     display: flex;
+     justify-content: space-between;
+     flex-direction: column-reverse;
+ }
+  .nutraj-column-1 {
+     margin: 0;
+ }
+ 
+     .custom-button {
+         font-size: 14px;
+     }
+ 
+     .nutraj-column-2 img {
+         height: auto;
+         width: 100%;
+     }
+ 
+   .nutraj-group {
+     margin-left: 11%;
+     margin-top: 3%;
+     width: 32%;
+     }
+ 
+     .nutraj-group img {
+         height: 250px;
+     }
+ }
+ 
+   @media (max-width: 425px) {
+     .nutraj-row {
+         display: flex;
+         justify-content: space-between;
+         flex-direction: column-reverse;
+     }
+ 
+     .nutraj-column-1 {
+         margin: 0;
+     }
+     .nutraj-li{
+     margin-left: 0%;
+   }
+ 
+     .custom-button {
+         font-size: 12px; 
+     }
+ 
+     .nutraj-column-2 img {
+         height: auto;
+         width: 100%;
+     }
+ 
+     .nutraj-group {
+         margin-left: 9%; 
+         margin-top: 3%;
+         width: 34%;
+     }
+ 
+     .nutraj-group img {
+         height: 200px; 
+     }
+     
+ }
+     @media (max-width: 320px) {
+        .nutraj-group {
+         margin-left: 8%;
+         margin-top: 3%;
+         width: 38%;
+     }
+        .nutraj-group img {
+         height: 155px;
+     }
+      }
+ 
+ 
+ 
+ {% endstylesheet %}
+ 
+ {% javascript %}
+ {% endjavascript %}

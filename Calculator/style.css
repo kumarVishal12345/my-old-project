@@ -1,0 +1,137 @@
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #0a0a0a, #3a4452);
+}
+.calculator{
+    width: 24%;
+    border: 1px solid #717377;
+    padding: 20px;
+    border-radius: 15px;
+    background: transparent;
+    box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
+}
+input{
+    width: 94%;
+    border: none;
+    padding: 24px;
+    margin: 10px;
+    background: transparent;
+    box-shadow: 0px 3px 15px rgba(84, 84, 84, 0.1);
+    font-size: 40px;
+    text-align: right;
+    cursor: pointer;
+}
+input::placeholder{
+    color: #ffffff;
+}
+
+button{
+    border: none;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 50%;
+    background: transparent;
+    color: #ffffff;
+    font-size: 20px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+.equBtn{
+    background: #fb7c14;
+}
+.operator{
+    color: aqua;
+} */
+
+
+.listing {
+    margin: 50px 0 20px;
+}
+
+.listing li:nth-child(odd) {
+    background: #f0f0f0;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+.justify-content-between {
+    justify-content: space-between !important;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+.col {
+    flex: 1 0 0%;
+}
+
+.city-name {
+    color: var(--primary-color-pink);
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+label {
+    display: inline-block;
+}
+
+.col-9 {
+    flex: 0 0 auto;
+    width: 75%;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+.justify-content-evenly {
+    justify-content: space-evenly !important;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+img, svg {
+    vertical-align: middle;
+}
+
+
+
+
+
+.listing ul li {
+    background: #fff;
+    padding: 20px;
+}
